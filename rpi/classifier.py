@@ -179,7 +179,7 @@ try:
         lcd.cursor_pos = (1, 0)
         lcd.write_string(f"{confidence:.2f}%")
         print(f"🧠 Predicted: {pred_class} ({confidence:.2f}% confidence)")
-        time.sleep(2)
+        time.sleep(10)
 
         # Back to ready
         lcd.clear()
@@ -194,5 +194,5 @@ finally:
     animation_running = False
     lcd.clear()
     lcd.write_string("goodbye!")
-    time.sleep(3)
+    time.sleep(7)
     lcd.clear()
