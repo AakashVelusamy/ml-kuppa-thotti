@@ -53,3 +53,8 @@ sudo chmod -R 755 /home/pi/venv
 
 sudo systemctl daemon-reload
 sudo systemctl restart kuppa_thotti.service
+
+sudo apt update
+sudo apt install -y python3-libcamera python3-kms++ libcamera-apps
+
+pip install --no-cache-dir git+https://github.com/raspberrypi/picamera2.git
