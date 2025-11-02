@@ -36,13 +36,26 @@ pip install RPLCD smbus2 RPi.GPIO adafruit-pca9685
 
 source ~/venv/bin/activate
 
-sudo nano /etc/systemd/system/kuppa_thotti.service
+sudo nano /etc/systemd/system/kuppa_thotti_motion.service
+sudo nano /etc/systemd/system/kuppa_thotti_classifier.service
+
+sudo chmod +x /home/pi/motion_detect.py
+sudo chmod +x /home/pi/classifier.py
+
+sudo mkdir -p /home/pi/tmp
+sudo chmod 777 /home/pi/tmp
+sudo chmod 666 /home/pi/logs.txt
+sudo chown pi:pi /home/pi/logs.txt
 
 sudo systemctl daemon-reload
-sudo systemctl enable kuppa_thotti.service
-sudo systemctl start kuppa_thotti.service
+sudo systemctl enable kuppa_thotti_motion.service
+sudo systemctl enable kuppa_thotti_classifier.service
 
-sudo systemctl status kuppa_thotti.service
+sudo systemctl start kuppa_thotti_motion.service
+sudo systemctl start kuppa_thotti_classifier.service
+
+sudo systemctl status kuppa_thotti_motion.service
+sudo systemctl status kuppa_thotti_classifier.service
 
 sudo chmod 666 /home/pi/logs.txt
 sudo chown pi:pi /home/pi/logs.txt
@@ -51,8 +64,6 @@ sudo chmod +x /usr/bin/rpicam-still
 sudo chown -R pi:pi /home/pi/venv
 sudo chmod -R 755 /home/pi/venv
 
-sudo systemctl daemon-reload
-sudo systemctl restart kuppa_thotti.service
 
 sudo apt update
 sudo apt install -y python3-libcamera python3-kms++ libcamera-apps
