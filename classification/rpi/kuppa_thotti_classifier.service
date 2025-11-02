@@ -1,6 +1,6 @@
 [Unit]
-Description=Kuppa Thotti Service
-After=network.target
+Description=Kuppa Thotti Classifier Service
+After=multi-user.target
 
 [Service]
 ExecStart=/home/pi/venv/bin/python /home/pi/classifier.py
@@ -13,3 +13,4 @@ Environment="PATH=/home/pi/venv/bin"
 
 [Install]
 WantedBy=multi-user.target
+

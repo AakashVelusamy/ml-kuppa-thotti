@@ -1,0 +1,14 @@
+[Unit]
+Description=Kuppa Thotti Motion Detection Service
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/motion_detect.py
+WorkingDirectory=/home/pi
+StandardOutput=append:/home/pi/logs.txt
+StandardError=append:/home/pi/logs.txt
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

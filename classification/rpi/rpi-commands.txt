@@ -69,3 +69,13 @@ sudo apt update
 sudo apt install -y python3-libcamera python3-kms++ libcamera-apps
 
 pip install --no-cache-dir git+https://github.com/raspberrypi/picamera2.git
+
+tail -f /home/pi/logs.txt
+
+scp -r pi@raspberrypi.local:/home/pi/venv "C:/Users/Aakash` V/Downloads/"
+scp pi@raspberrypi.local:/etc/systemd/system/*.service "C:/Users/Aakash V/Downloads/"
+scp pi@raspberrypi.local:/home/pi/*.py "C:/Users/Aakash V/Downloads/"
+cd tmp
+sudo rm -rf ./*
+
+
