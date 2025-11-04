@@ -78,4 +78,6 @@ scp pi@raspberrypi.local:/home/pi/*.py "C:/Users/Aakash V/Downloads/"
 cd tmp
 sudo rm -rf ./*
 
-
+sudo apt install pigpio python3-pigpio -y
+sudo systemctl enable pigpiod
+sudo systemctl start pigpiod
